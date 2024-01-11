@@ -29,7 +29,7 @@ public class CourseCommandLineRunner implements CommandLineRunner{
 		System.out.println(repository.findById(2l));
 		System.out.println(repository.findById(3l));
 		
-	
+		System.out.println(repository.findAll());
 		
 	}
 
