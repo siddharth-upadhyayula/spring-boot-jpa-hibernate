@@ -1,25 +1,35 @@
-package com.example.springbootjpahibernate.course.jdbc;
+package com.example.springbootjpahibernate.course;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 
 import com.example.springbootjpahibernate.course.Course;
+import com.example.springbootjpahibernate.course.jpa.CourseJpaRepository;
+import com.example.springbootjpahibernate.course.springdatajpa.CourseSpringDataJpaRepository;
 
-public class CourseJdbcCommandLineRunner implements CommandLineRunner{
+public class CourseCommandLineRunner implements CommandLineRunner{
 
+//	@Autowired
+//	private CourseJdbcRepository repository; 
+	
+//	@Autowired
+//	private CourseJpaRepository repository;
+	
 	@Autowired
-	private CourseJdbcRepository repository; 
+	private CourseSpringDataJpaRepository repository;
 	
 	@Override
 	public void run(String... args) throws Exception {
-		repository.insert(new Course(1, "Learn AWS", "Sid"));	
-		repository.insert(new Course(2, "Learn GCP", "Sid"));
-		repository.insert(new Course(3, "Learn DevOps", "Sid"));
+		repository.save(new Course(1, "Learn AWS", "Sid"));	
+		repository.save(new Course(2, "Learn GCP", "S"));
+		repository.save(new Course(3, "Learn DevOps", "d"));
 		
 	
 		
-		System.out.println(repository.findById(2));
-		System.out.println(repository.findById(2));
+		System.out.println(repository.findById(2l));
+		System.out.println(repository.findById(3l));
+		
+	
 		
 	}
 
