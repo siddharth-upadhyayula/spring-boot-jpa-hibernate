@@ -47,7 +47,6 @@ public class CourseJdbcRepository {
 	}
 	
 	public Course findById(long id) {
-		//ResultSet -> Bean => Row Mapper => 
 		return springJdbcTemplate.queryForObject(SELECT_QUERY,
 				new BeanPropertyRowMapper<>(Course.class), id);
 		
